@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
     useEffect(() =>{
         
         const db = getFirestore()
-        const getItem = db.collection("ItemCollection").doc(productId)
+        const getItem = db.collection("instruments").doc(productId)
 
         getItem.get().then((querySnapshot) => {
             setItem({id:querySnapshot.id, ...querySnapshot.data()})

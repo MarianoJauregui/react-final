@@ -13,9 +13,9 @@ const ItemListContainer = () => {
         let itemCollection
 
         if (categoryName){
-            itemCollection = db.collection("ItemCollection").where("category", "==", categoryName)
+            itemCollection = db.collection("instruments").where("category", "==", categoryName)
         } else{
-            itemCollection = db.collection("ItemCollection")
+            itemCollection = db.collection("instruments")
         }
         
         const itemCollectionQuery = itemCollection.get()

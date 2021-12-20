@@ -27,18 +27,6 @@ const Cart = () => {
         const db = getFirestore()
         const orders = db.collection('order')
 
-        /* let orderInfo =[]
-        products.map((itemInfo) => {
-            for (let i = 0; i < itemInfo.quantity; i++ ){
-                orderInfo.push({
-                    id: itemInfo.id,
-                    name: itemInfo.name,
-                    quantity: itemInfo.quantity,
-                    price: itemInfo.price
-                })
-            }
-        }) */ 
-        
         const newOrder = {
             buyer,
             products,
@@ -54,7 +42,7 @@ const Cart = () => {
         ).catch((e) => {console.log(e)})
 
 
-        const Itemscollection = db.collection("ItemCollection")
+        const Itemscollection = db.collection("instruments")
         const batch = getFirestore().batch()
 
         products.forEach( p => {
